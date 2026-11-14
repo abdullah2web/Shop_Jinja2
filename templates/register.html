@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<section>
+    <h1 class="title">Register</h1>
+    <div class="product-grid">
+        <div class="card">
+            <form method="GET" action="">
+                <div>
+                    <img src="{{ url_for('static', filename='user.png') }}">
+                </div>
+                <div class="row">
+                    <input class="bar" type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="row">
+                    <input class="bar" type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="row">
+                    <input class="bar" type="password" name="password" placeholder="Password" required>
+                </div>    
+                <div class="row">
+                    <input class="bar" type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>    
+                <div class="row">
+                    <input class="submit" type="submit" value="Register">
+                </div>
+            </form>
+            <div class="ancor">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

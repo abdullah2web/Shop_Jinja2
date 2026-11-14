@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+    {% if title %}
+      <title>Shop - {{ title }}</title>
+    {% else %}
+      <title>Shop</title>
+    {% endif %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li class="logo">SHOP</li>
+          <li><a class="link {{ 'active' if request.path == url_for('home') }}" href="{{ url_for('home') }}">Home</a></li>
+          <li><a class="link {{ 'active' if request.path == url_for('cart') }}" href="{{ url_for('cart') }}">Cart</a></li>
+          <li><a class="link {{ 'active' if request.path == url_for('account') }}" href="{{ url_for('account') }}">Account</a></li>
+          <li><a class="link" href="{{ url_for('home') }}">Logout</a></li>
+          <li><a class="link {{ 'active' if request.path == url_for('register') }}" href="{{ url_for('register') }}">Register</a></li>
+          <li><a class="link {{ 'active' if request.path == url_for('login') }}" href="{{ url_for('login') }}">LogIn</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer class="footer">
+      <p><span class="logo">SHOP</span>&copy; All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

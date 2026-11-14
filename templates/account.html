@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<section>
+    <h1 class="title">Account</h1>
+    <div class="center">
+        <img src="{{ url_for('static', filename='user.png') }}"> 
+        <div>
+            <h3>User1</h3>
+            <p>noreply@demo.com</p>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="card">
+            <form method="GET" action="" enctype="multipart/form-data">
+                <div>
+                    <h3>Change Your Info</h3>
+                </div>
+                <div class="row">
+                    <input class="bar" type="text" name="username" placeholder="User1">
+                </div>
+                <div class="row">
+                    <input class="bar" type="email" name="email" placeholder="noreply@demo.com">
+                </div>
+                <div class="row">
+                    <input class="submit" type="submit" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
